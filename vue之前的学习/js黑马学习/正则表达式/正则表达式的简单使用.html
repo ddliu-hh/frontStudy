@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 正则表达式(RegularExpression）是用于匹配字符串中字符组合的模式。在JavaScript中，正则表达式也是对象
+通常用来查找、替换那些符合正则表达式的文本，许多语言都支持正则表达式。 -->
+  <script>
+    const str = '我们在学习前端，希望学习前端能高薪毕业'
+    // 正则表达式使用：
+    // 1. 定义规则，正则表达式的规则是先写两个/（这两个是正则表达式的字面量） ，然后在/里写想要匹配的字符，
+    const reg = /前端/
+    // 2. 是否匹配，test()方法用来查看正则表达式与指定的字符串是否匹配，匹配返回true，不匹配返回false
+    console.log(reg.test(str))  // true
+    // 3. exec()方法在一个指定字符串中执行一个搜索匹配,如果匹配成功exec()方法返回一个数组,否则返回null
+    console.log(reg.exec(str))  // 返回数组
+  </script>
+</body>
+
+</html>

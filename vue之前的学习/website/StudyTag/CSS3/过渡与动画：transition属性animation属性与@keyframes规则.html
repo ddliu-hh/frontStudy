@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+ <style type="text/css">
+
+ 	/*@1  transition*/
+ 	/*首先设置box1的初始状态*/
+        #box1{
+            display:inline-block;
+            width:100px;
+            height:100px;
+            border-radius:0;
+            background-color:#14C7F3;
+                        
+                        /*下面设置过渡状态。all：代表所有取值发生变化的属性来完成过渡
+                        ，1s：代表过渡的时间，linear:代表过渡的方式是匀速的*/
+
+                        /*注意，采用过渡是为了让变化更柔和*/
+            transition: all 1s linear;
+
+            /*-webkit-transition: border-radius,background-color 1s linear 2s;
+            -moz-transition: border-radius,background-color 1s linear 2s;
+            -ms-transition: border-radius,background-color 1s linear 2s;
+            -o-transition: border-radius,background-color 1s linear 2s;*/            
+        }
+
+        /*当鼠标悬停时发生过渡，其实就算不采用过渡悬停时也会发生变化，只是一下子就变，显得太突然*/
+        #box1:hover
+        {
+            border-radius:50px;
+            background-color:red;
+        }
+
+
+/*transition-timing-function属性*/
+        div
+        {
+            width:100px;
+            height:50px;
+            text-align:center;
+            line-height:50px;
+            margin-top:10px;
+            border-radius:0;
+            background-color:#14C7F3;
+            transition-property:width;/*这里是设置哪个属性变化，这里是width*/
+            transition-duration:2s ;  /*变化过程持续的时间长度*/ 
+            transition-delay:0;/*延迟*/
+        }
+        
+        #div1{transition-timing-function:linear;}
+        #div2{transition-timing-function:ease;}
+        #div3{transition-timing-function:ease-in;}
+        #div4{transition-timing-function:ease-out;}
+        #div5{transition-timing-function:ease-in-out}
+        div:hover
+        {
+            width:300px;
+        }
+
+
+/*2.定义animation动画*/
+
+        #box{
+		width: 100px;
+		height: 100px;
+		background-color: black;
+	}
+
+	/*首先定义很多个关键帧，可以理解为一幅幅画面*/
+	@keyframes mycolor/*mycolor是动画名字*/
+	 {
+	    0%     {background-color:red;}/*关键帧的名字一般用百分比表示*/
+	    30%   {background-color:blue;}
+	    60%   {background-color:yellow;}
+	    100% {background-color:green;}
+	}
+	 #box:hover
+	{
+	    animation: mycolor 5s linear;/*关键帧animation属性设置，动画名字-动画持续时间，动画速度曲线*/
+	}
+    </style>
+
+</head>
+<body>
+
+	<!-- 1.transition:过渡，将元素的某个属性从"一个值"
+在指定的时间内柔和的过渡到"另一个值' -->
+
+    <div id="box1"></div>
+
+<!-- 下面是transition-timing-function属性的设置，这个属性是设置变化的方式的 -->
+    <div id="div1">linear</div>/*匀速*/
+    <div id="div2">ease</div>/*慢快慢*/
+    <div id="div3">ease-in</div>/*慢快*/
+    <div id="div4">ease-out</div>/*快慢*/
+    <div id="div5">ease-in-out</div>/*慢快慢*/
+
+
+
+
+
+    <!-- 2.animation动画 -->
+
+    <div id="box"></div>
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 根据商品单价、购买数量以及收款金额计算并输出应收金额和找零。
+			// 当总价大于或等于500时，享受8折优惠。
+			// 如果收款小于应收款，给出提示
+
+
+				//1、定义输入变量:单价(price),数量(count),收款金额(money)
+				// 破ruai斯
+				var price,count,money;
+				//2、定义输出变量:产品总价(total),找零(change)
+				// tou tou
+				var total,change;
+				//3、为输入变量赋值(prompt方式)
+					//3.1 为 单价(price) 赋值
+					price=prompt("请输入商品单价:");//prompt:提示
+					//3.2 为 数量(count) 赋值
+					count=prompt("请输入购买数量:");
+				//4、根据 单价 和 数量 ，计算 产品总价(total) total = price * count ,输出产品总价
+				total=price*count;
+
+				/********增加条件判断：大于500打八折*********/
+				/*条件：total>=500?*/
+				/*满足：total*=0.8 */
+				if(total>=500){
+					alert("您消费超过500，可以打八折");
+					total*=0.8;
+				}
+				alert("您此次消费:"+total+"元");
+				//5、为收款金额(money)赋值 (prompt)
+				money=prompt("收款:");
+
+				/*********判断 应收金额(total)和收款金额(money)之间的关系***********/
+				if(money>=total){
+					//6、计算找零(change)=收款金额(money)-产品总价(total),输出找零
+					change=money-total;
+					alert("共找您:"+change+"元");
+				}else{
+					alert("对不起，您给的钱不够!!!");
+				}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 20px;
+      text-align: center;
+      line-height: 100px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<!-- 
+  事件对象是什么,也是个对象，这个对象里有事件触发时的相关信息
+例如:鼠标点击事件中，事件对象就存了鼠标点在哪个位置等信息使用场景
+可以判断用户按下哪个键，比如按下回车键可以发布新闻
+可以判断鼠标点击了哪个元素，从而做相应的操作
+
+ -->
+
+<body>
+
+  <input type="text">
+  <script>
+
+    const input = document.querySelector('input')
+    // e就是事件对象，当然也可以取别的名字
+    input.addEventListener('keyup', function (e) {
+
+      // console.log(e.key)//用户按下的键盘的值
+      if (e.key === 'Enter') {
+        console.log('我按下了回车键')
+      }
+    })
+  </script>
+
+
+  <!-- 以下是包括不同事件对象属性和方法的示例代码 -->
+  <div id="box">点击我</div>
+
+  <script>
+    const box = document.querySelector('#box');
+
+    // 添加点击事件监听器
+    box.addEventListener('click', function (e) {
+      // 获取事件类型
+      console.log(`事件类型：${e.type}`);
+
+      // 获取事件目标元素，tagName 是 DOM 元素对象的一个属性，它用于获取元素的标签名（元素类型）。
+      // tagName 返回的标签名通常是大写字母形式，例如 "DIV"、"A"、"BUTTON" 等。这个属性是 DOM 元素对象的一部分，因此可以直接在 JavaScript 中访问它
+      console.log(`事件目标元素：${e.target.tagName}`);
+
+      // 获取事件当前处理的元素
+      console.log(`当前处理的元素：${e.currentTarget.tagName}`);
+
+      // 判断事件是否会冒泡
+      console.log(`冒泡：${e.bubbles}`);
+
+      // 获取事件发生的时间戳
+      console.log(`时间戳：${e.timeStamp}`);
+
+      // 阻止事件的默认行为（取消链接的跳转）
+      e.preventDefault();
+
+      // 停止事件冒泡
+      e.stopPropagation();
+    });
+
+    // 添加键盘事件监听器，直接对document监听，妙啊
+    document.addEventListener('keydown', function (e) {
+      // 获取键盘按键的名称
+      console.log(`按下的键：${e.key}`);
+
+      // 获取键盘按键的键码
+      console.log(`键码：${e.keyCode}`);
+
+      // 判断事件是否可以被取消
+      console.log(`可取消：${e.cancelable}`);
+    });
+  </script>
+</body>
+
+</html>

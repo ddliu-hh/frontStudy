@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 以前this的指向：  谁调用的这个函数，this 就指向谁
+    // console.log(this)  // window
+    // // 普通函数
+    // function fn() {
+    //   console.log(this)  // window
+    // }
+    // window.fn()
+    // // 对象方法里面的this
+    // const obj = {
+    //   name: 'andy',
+    //   sayHi: function () {
+    //     console.log(this)  // obj
+    //   }
+    // }
+    // obj.sayHi()
+
+    // 2.箭头函数不会创建自己的this，它只会从自己的作用域链的上一层沿用this。
+    // const fn = () => {
+    //   console.log(this)  // window
+    // }
+    // fn()
+    // 对象方法箭头函数 this
+    const obj2 = {
+      uname: 'pink老师',
+      sayHi: () => {
+        console.log(this)  // this 指向谁？ window，因为obj2没有this,window才有
+      }
+    }
+    obj2.sayHi()
+
+    const obj = {
+      uname: 'pink老师',
+      sayHi: function () {
+        console.log(this)  // obj
+        let i = 10
+        const count = () => {
+          console.log(this)  // obj 
+        }
+        count()
+      }
+    }
+    obj.sayHi()
+
+
+
+  </script>
+  <!-- 
+
+箭头函数中的this 与普通函数完全不同，也不受调用方式的影响，事实上箭头函数中并不存在this !
+1.箭头函数会默认帮我们绑定外层this 的值，所以在箭头函数中this的值和外层的this是一样的
+⒉.箭头函数中的this引用的就是最近作用域中的this
+3.向外层作用域中，一层一层查找this，直到有this的定义
+
+   -->
+</body>
+
+</html>

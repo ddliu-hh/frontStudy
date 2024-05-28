@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // forEach 就是遍历  加强版的for循环  适合于遍历数组对象，当前数组元素（item）是必须要写的，索引号可选
+    // forEach不返回数组，只遍历
+    // 这里我用了箭头函数
+    const arr = ['red', 'green', 'pink']
+    const result = arr.forEach((item, index) => {
+      console.log(item)  // 每一个当前数组元素 red  green pink
+      console.log(index) // 每一个当前数组元素对应的索引号，从0开始
+    })
+    // console.log(result)
+
+    // const result2 = arr.forEach(function (item, index) {
+    //   console.log(index)
+    // })
+  </script>
+</body>
+
+</html>

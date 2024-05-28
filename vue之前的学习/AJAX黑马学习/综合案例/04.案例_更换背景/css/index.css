@@ -1,0 +1,144 @@
+/* html, body 是一个选择器，它同时选择了 html 元素和 body 元素。 */
+html,
+body {
+  height: 100%;
+  font-size: 14px;
+}
+
+/* 
+padding 和 margin 都是用来控制元素周围空间和布局的CSS属性，但它们有不同的作用和用途：
+
+padding（内边距）：
+
+padding 用于控制元素的内边距，即元素内容与元素边界之间的距离。
+设置 padding 会增加元素内容区域的大小，但不会影响元素本身的大小（即元素的宽度和高度）。
+padding 可以用来创建元素内部的空白区域，用于放置文本、图像等内容。
+margin（外边距）：
+
+margin 用于控制元素与其周围其他元素之间的距离。
+设置 margin 会增加元素与其相邻元素之间的间隔，影响元素在页面中的布局。
+margin 可以用来控制元素之间的垂直或水平间距，实现页面布局的调整。
+*/
+
+/* 
+height: 60px;: 这是设置元素的高度属性，将其高度设置为60像素。这可以用来定义导航栏的高度。
+background: rgba(0, 0, 0, 0.2); 这是设置元素的背景属性。rgba()是一种颜色表示方法，这里的参数表示背景颜色为黑色（RGB值为0, 0, 0）并且透明度为0.2（范围从0到1，0表示完全透明，1表示完全不透明）。因此，这个背景颜色是半透明的黑色
+display: flex;: 这是设置元素的显示属性为flex，这意味着该元素使用弹性布局。弹性布局通常用于实现水平和垂直居中以及排列子元素的灵活布局。
+
+justify-content: space-between;: 这是设置弹性容器内子元素的水平对齐方式。space-between值将子元素分散对齐，使它们在容器内水平平均分布，并在容器的两端留下额外的空间。
+
+align-items: center;: 这是设置弹性容器内子元素的垂直对齐方式。center值将子元素垂直居中对齐，使它们在容器内垂直居中显示。
+
+padding: 0 20px;: 这是设置元素的内边距属性。内边距是元素内容与边框之间的空间。这里的设置将上下内边距设为0（没有垂直内边距），左右内边距设为20像素，给导航栏的内容添加左右边距，增加内容与边框之间的距离。
+
+
+*/
+.nav {
+  height: 60px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav ul {
+  display: flex;
+}
+
+/* 
+margin-right: 10px;: 这是为被选择的li元素设置右外边距的样式属性。具体地，将右外边距设为10像素，这将在每个li元素的右侧创建一定的空隙，增加列表项之间的间距。
+cursor: pointer;: 这是为被选择的li元素设置鼠标指针样式的属性。将鼠标指针样式设为pointer，通常用于表明这些列表项可以被点击或具有交互性，以提示用户进行交互操作。
+*/
+.nav ul li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* 
+text-decoration: 这是CSS属性，用于控制文本的装饰效果，如下划线、删除线等。
+none: 这是text-decoration属性的一个值，表示不应用任何文本装饰效果
+underline: 用于显示文本的下划线效果，通常用于超链接。
+overline: 用于在文本上方显示一条线。
+line-through: 用于在文本中间显示一条删除线。
+*/
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* 
+padding: 5px 10px;: 这是为被选择的label元素设置内边距的样式属性。具体地，上下内边距为5像素，左右内边距为10像素，这样的内边距可以增加标签元素的大小和空间。
+border-radius: 10px;: 这是为被选择的label元素设置圆角边框的样式属性。将圆角半径设置为10像素，这将使标签元素的边角变得圆滑。
+font-size: 12px;: 这是为被选择的label元素设置字体大小的样式属性。将字体大小设置为12像素，以控制标签元素内文本的大小。
+cursor: pointer;: 这是为被选择的label元素设置鼠标指针样式的属性。将鼠标指针样式设置为pointer，通常用于表明标签元素可以被点击或具有交互性，以提示用户进行交互操作。
+*/
+.nav .right label {
+  background: #edf2f5;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.nav .right input {
+  display: none;
+}
+
+.search-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.search-container .search-box {
+  display: flex;
+}
+
+.search-container img {
+  margin-bottom: 30px;
+}
+
+
+.search-container .search-box input {
+  width: 512px;
+  height: 16px;
+  padding: 12px 16px;
+  font-size: 16px;
+  margin: 0;
+  vertical-align: top;
+  outline: 0;
+  box-shadow: none;
+  border-radius: 10px 0 0 10px;
+  border: 2px solid #c4c7ce;
+  background: #fff;
+  color: #222;
+  overflow: hidden;
+  box-sizing: content-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.search-container .search-box button {
+  cursor: pointer;
+  width: 112px;
+  height: 44px;
+  line-height: 41px;
+  line-height: 42px;
+  background-color: #ad2a27;
+  border-radius: 0 10px 10px 0;
+  font-size: 17px;
+  box-shadow: none;
+  font-weight: 400;
+  border: 0;
+  outline: 0;
+  letter-spacing: normal;
+  color: white;
+}
+
+body {
+  background: no-repeat center /cover;
+  background-color: #edf0f5;
+}

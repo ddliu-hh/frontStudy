@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX概念和axios使用</title>
+</head>
+<!-- 
+  定义:AJAX是异步的JavaScript和XML(Asynchronous JavaScript And XML)。简单点说，就是使用
+  XMLHttpRequest对象与服务器通信。它可以使用JSON，XML，HTML和text文本等格式发送和接收数据。
+  AJAX最吸引人的就是它的“异步“特性，也就是说它可以在不重新刷新页面的情况下与服务器通信，交换数据，或更新页面。
+  概念:AJAX是浏览器与服务器进行数据通信的技术
+
+
+  怎么用AJAX ?
+1．先使用axios [aek'sioos]库，与服务器进行数据通信
+基于XMLHttpRequest封装、代码简单、月下载量在14亿次
+Vue、React项目中都会用到axios
+2.再学习XMLHttpRequest 对象的使用，了解AJAX底层原理
+
+axios使用
+语法:
+1．引入axios.js: https://cdn.jsdelivr.net/npm/axios/dist/ axios.min.js2．
+2.使用axios函数
+传入配置对象
+再用.then回调函数接收结果，并做后续处理
+
+ -->
+
+<body>
+  <!--
+    axios库地址：https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js
+    省份数据地址：http://hmajax.itheima.net/api/province
+
+    目标: 使用axios库, 获取省份列表数据, 展示到页面上
+    1. 引入axios库
+  -->
+  <p class="my-p"></p>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // 2. 使用axios函数
+    axios({
+      // url是要填写的目标资源地址
+      url: 'http://hmajax.itheima.net/api/province'
+    }).then(result => {
+      // result里有返回来的结果
+
+      console.log(result.data.list)
+      // 数组的 join 方法，它将数组中的元素连接成一个字符串，并使用指定的分隔符（在这里是 <br> 标签）。
+      // 所以，它将数组中的元素以 <br> 标签连接起来，形成一个包含换行的字符串。
+      console.log(result.data.list.join('<br>'))
+      // 把准备好省份列表，插入到页面
+      document.querySelector('.my-p').innerHTML = result.data.list.join('<br>')
+    })
+
+
+
+  </script>
+</body>
+
+</html>

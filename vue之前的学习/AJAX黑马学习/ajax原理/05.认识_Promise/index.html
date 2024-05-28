@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>认识Promise</title>
+</head>
+
+<body>
+  <script>
+    /**
+     * 目标：使用Promise管理异步任务
+     * Promise对象用于表示一个异步操作的最终完成(或失败）及其结果值。
+    */
+    // 1. 创建Promise对象
+    const p = new Promise((resolve, reject) => {
+      // 2. 执行异步代码
+      setTimeout(() => {
+        // resolve('模拟AJAX请求-成功结果')//触发then操作
+        reject(new Error('模拟AJAX请求-失败结果'))//触发catch操作
+      }, 2000)
+    })
+
+    // 3. 获取结果
+    p.then(result => {
+      console.log(result)
+    }).catch(error => {
+      console.log(error)
+    })
+  </script>
+</body>
+
+</html>

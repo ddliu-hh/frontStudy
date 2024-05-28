@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- jS中内存的分配和回收都是自动完成的，内存在不使用的时候会被垃圾回收器自动回收 -->
+<!-- 
+  内存的生命周期
+JS环境中分配的内存，一般有如下生命周期：
+内存分配：当我们声明变量、函数、对象的时候/系统会自动为他们分配内存
+内存使用：即读写内存也就是使用变量、函数等
+内存回收：使用完毕,由垃圾回收器自动回收不再使用的内存
+
+全局变量一般不会回收（关闭页面回收）
+一般情况下局部变量的值，不用了会被自动回收掉
+内存泄漏：程序中分配的内存由于某种原因程序未释放或无法释放叫做内存泄漏
+
+标记清除法
+ -->
+
+<body>
+  <script>
+    for (let i = 1; i <= 3; i++) {
+
+    }
+    let num = 10
+    function fn() {
+      const str = 'andy'
+      // str = 'lily'
+      console.log(str)
+    }
+    fn()
+    fn()
+    fn()
+  </script>
+</body>
+
+</html>

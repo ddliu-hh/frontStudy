@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		var arr=["h","e","ll","o"];
+		document.write(arr.join(""));//将arr中每个元素转为字符串,用自定义符号连接，这里是空，那就是hello
+
+		String(arr);//将arr中每个元素转为字符串用逗号分隔
+
+
+		var arr2=[60,50,80,90,100];
+
+		var arr3=arr2.concat(40,30,arr);//拼接
+		document.write(arr3);
+
+		var arr5=arr2.slice(1,4);//从原数组选取一部分做为新数组，含头不含尾,50,80,90
+		document.write(arr5);
+
+		var arr6=arr2.splice(0,4,999);//删除arr2数组的从第1位置元素开始的一个元素，并用999替代
+		document.write(arr6);
+
+
+	</script>
+	
+</body>
+</html>

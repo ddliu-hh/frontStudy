@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 500px;
+      height: 500px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<!-- 
+  事件流指的是事件完整执行过程中的流动路径
+  说明:假设页面里有个div，当触发事件时，会经历两个阶段，分别是捕获阶段、冒泡阶段
+  捕获是：document->html->body->div
+  冒泡是反着来
+  简单来说:捕获阶段是从父到子冒泡阶段是从子到父
+  实际工作都是使用事件冒泡为主
+
+ -->
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <script>
+    const fa = document.querySelector('.father')
+    const son = document.querySelector('.son')
+    // 山东  济南  蓝翔   目标（pink老师）  捕获阶段
+    //  蓝翔  济南   山东   冒泡阶段
+
+    // addEventListener第三个参数传入true代表是捕获阶段触发，若传入false代表冒泡阶段触发，默认就是false
+    // 下面是捕获的示例代码
+    document.addEventListener('click', function () {
+      alert('我是爷爷')
+    }, true)
+    fa.addEventListener('click', function () {
+      alert('我是爸爸')
+    }, true)
+    son.addEventListener('click', function () {
+      alert('我是儿子')
+    }, true)
+
+  </script>
+</body>
+
+</html>

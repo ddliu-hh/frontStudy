@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+实例方法join数组元素拼接为字符串，返回字符串(重点)
+实例方法find查找元素，返回符合测试条件的第一个数组元素值，如果没有符合条件的则返回undefined(重点)
+实例方法every检测数组所有元素是否都符合指定条件，如果所有元素都通过检测返回true，否则返回false(重点)
+实例方法 some检测数组中的元素是否满足指定条件如果数组中有元素满足条件返回true，否则返回false
+实例方法concat合并两个数组，返回生成新数组
+实例方法sort对原数组单元值排序
+实例方法 splice删除或替换原数组单元
+实例方法reverse反转数组
+实例方法 findIndex查找元素的索引值
+
+ -->
+
+<body>
+  <script>
+    // 创建一个示例数组
+    const exampleArray = [10, 20, 30, 40, 50];
+
+    // 使用 join 方法将数组元素拼接成字符串，这里我用逗号分隔，如果什么都不加就连在一起
+    const joinedString = exampleArray.join(',');
+    console.log(joinedString); // 输出: "10, 20, 30, 40, 50"
+
+    // 使用 find 方法查找数组中第一个大于 25 的元素
+    const foundElement = exampleArray.find(element => element > 25);
+    console.log(foundElement); // 输出: 30
+
+    // 使用 every 方法检测数组中所有元素是否都大于等于 10
+    const allElementsGreaterOrEqual = exampleArray.every(element => element >= 10);
+    console.log(allElementsGreaterOrEqual); // 输出: true
+
+    // 使用 some 方法检测数组中是否有至少一个元素大于 40
+    const hasElementGreaterThan40 = exampleArray.some(element => element > 40);
+    console.log(hasElementGreaterThan40); // 输出: true
+
+    // 创建另一个示例数组
+    const anotherArray = [60, 70, 80];
+
+    // 使用 concat 方法合并两个数组
+    const mergedArray = exampleArray.concat(anotherArray);
+    console.log(mergedArray); // 输出: [10, 20, 30, 40, 50, 60, 70, 80]
+
+    // 使用 sort 方法对数组元素进行排序,sort 方法用于对数组的元素进行排序。默认情况下，它会将数组元素视为字符串并按照字符顺序排序
+    const fruits = ['apple', 'cherry', 'banana'];
+    fruits.sort();
+    console.log(fruits); // 输出: ["apple", "banana", "cherry"]
+
+    const numbers = [40, 100, 1, 5, 25];
+    // a 和 b 是要比较的两个元素。
+    // a - b 返回的值可以是负数、零或正数，根据返回值的不同来决定排序的顺序
+    // 如果 a - b 返回负数，意味着 a 应该排在 b 前面，即 a 在数组中的位置应该在 b 的前面，这会导致升序排序。
+    numbers.sort((a, b) => a - b); // 使用比较函数按升序排序
+    console.log(numbers); // 输出: [1, 5, 25, 40, 100]
+
+
+    // 使用 splice 方法删除第一个元素，并插入一个新元素
+    // array.splice(start, deleteCount, item1[], item2[],...)
+
+    // start：必需，表示修改开始的索引位置。如果 start 是负数，它将被解释为从数组末尾开始的位置。例如，-1 表示从末尾倒数第一个元素开始。
+    // deleteCount：可选，表示要删除的元素数量。如果省略了 deleteCount，或者它的值大于或等于数组的长度减去 start，则将删除从 start 开始到数组末尾的所有元素。
+    // item1, item2, ...：可选，要插入到数组的新元素。可以一次插入多个元素。
+    // 
+    const colors = ['red', 'green', 'blue', 'yellow'];
+    const removedElement = colors.splice(0, 1, 'orange');
+    console.log(colors); // 输出: ["orange", "green", "blue", "yellow"]
+    console.log(removedElement); // 输出: ["red"]
+
+    // 使用 reverse 方法反转数组元素顺序
+    const reversedArray = exampleArray.reverse();
+    console.log(reversedArray); // 输出: [50, 40, 30, 20, 10]
+
+    // 使用 findIndex 方法查找数组中第一个大于 30 的元素的索引
+    const index = exampleArray.findIndex(element => element > 30);
+    console.log(index); // 输出: 0 (因为 50 是第一个大于 30 的元素)
+
+  </script>
+</body>
+
+</html>

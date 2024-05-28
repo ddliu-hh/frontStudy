@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+<body>
+
+<!-- 1.隐式转换：自动转换，由JS在运算过程中，自己进行转换的操作，不需人为参与 -->
+      <script type="text/javascript">
+      	var num1=15;
+      	var s=typeof(num1);//获取num1的数据类型
+      	var s1=typeof num1;//也可以不用括号这样写
+
+
+      	// 注意NaN指的是：不是一个数字。isNaN(数据)：判断数据是不是一个数据，结果为boolean类型，结果为true时，不是一个数字；结果为false时：是一个数字
+
+      	// 所有数据类型1与string做+运算时，最后的结果都为string
+
+      	// 2.强制转换
+      	//@1 强制转换为string类型
+      	var num2=15+63;
+      	var str=num2.toString();//相当于num+"",加上一个空字符串
+
+      	//@2parseInt(),获取指定数据的整数部分，从左到右，遇到第一个非整数字符，则停止转换，如果第一个字符就是非整数字符的话，结果为NaN
+
+      	var Int=parseInt(num2);
+
+      	// @3parseFloat(),将指定数据转换为小数，遇到第一个非整数字符，则停止转换，如果第一个字符就是非整数字符的话，结果为NaN
+
+      	var result=parseFloat("35.25");
+      	var result2=parseFloat("35.2你好");//转换为35.2
+
+      	// @4将一个字符串解析为number,注意，一旦字符串包含非数字部分，将返回NaN
+
+      	var result3=Number("15kk");//NaN
+
+
+
+
+      </script>
+
+
+<!-- 2.运算符,语法和java差不多 -->
+      <script type="text/javascript">
+      	
+      	var lbd1=15;//整型15
+      	var lbd2="15";//字符串15
+      	lbd1===lbd2;//注意，三个等号是全等，不止比较数值是否相等，也比较类型是否相等
+
+      	lbd1!==lbd2;//不全等
+
+      	var input=prompt("请输入一个数据");//可以用prompt提示用户输入
+
+      	alert(isNaN(input));//判断是否是一个数字并输出
+      </script>
+
+	
+</body>
+</html>

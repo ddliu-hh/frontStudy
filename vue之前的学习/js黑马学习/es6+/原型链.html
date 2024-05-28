@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 
+  原型链-查找规则
+：
+  当访问一个对象的属性（包括方法）时，首先查找这个对象自身有没有该属性。如果没有就查找它的原型（也就是_proto_指向的prototype原型对象)
+  如果还没有就查找原型对象的原型(Object的原型对象)
+依此类推一直找到Object为止( null )
+_proto_对象原型的意义就在于为对象成员查找机制提供一个方向，或者说一条路线
+可以使用instanceof运算符用于检测构造函数的prototype属性是否出现在某个实例对象的原型链上
+
+ -->
+
+<body>
+  <script>
+    // function Objetc() {}
+    console.log(Object.prototype)
+    console.log(Object.prototype.__proto__)
+
+    function Person() {
+
+    }
+    const ldh = new Person()
+    // ldh.__proto__ 指向Person.prototype，然后Person.prototype.__proto__ 指向Object.prototype，这就构成了一条链
+    // console.log(ldh.__proto__ === Person.prototype)
+    // console.log(Person.prototype.__proto__ === Object.prototype)
+    console.log(ldh instanceof Person)
+    console.log(ldh instanceof Object)
+    console.log(ldh instanceof Array)
+    console.log([1, 2, 3] instanceof Array)
+    console.log(Array instanceof Object)
+  </script>
+</body>
+
+</html>

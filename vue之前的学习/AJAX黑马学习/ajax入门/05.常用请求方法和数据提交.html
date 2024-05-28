@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常用请求方法和数据提交</title>
+</head>
+<!-- 
+  常用请求方法
+请求方法:对服务器资源，要执行的操作
+请求方法      操作
+GET         获取数据
+POST        提交数据
+PUT        修改数据（全部)
+DELETE       删除数据
+PATCH       修改数据（部分)
+
+ -->
+
+<body>
+  <button class="btn">注册用户</button>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    /*
+      注册用户：http://hmajax.itheima.net/api/register
+      请求方法：POST
+      参数名：
+        username：用户名（中英文和数字组成，最少8位）
+        password：密码  （最少6位）
+
+      目标：点击按钮，通过axios提交用户和密码，完成注册
+    */
+    document.querySelector('.btn').addEventListener('click', () => {
+      axios({
+        url: 'http://hmajax.itheima.net/api/register',
+        method: 'POST',//method:请求的方法，如果是GET可以省略（不区分大小写)
+        // data：提交的数据，如果axios发现你写的是对象，不是json格式，如果服务器需要json,那就会自动帮你转为json,如下面所示
+        data: {
+          username: 'itheima00744',
+          password: '7654321'
+        }
+      })
+    })
+  </script>
+
+  <!-- <script>
+    document.querySelector('.btn').addEventListener('click', () => {
+      axios({
+        url: 'http://hmajax.itheima.net/api/register',
+        method: 'POST',
+        data: {
+          username: 'lbd666',
+          password: '123456'
+        }
+      })
+    })
+  </script> -->
+</body>
+
+</html>

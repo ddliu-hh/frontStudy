@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div
+	{
+	  width:100px;
+	  height:75px;
+	  background-color:#ccc;
+	  border:1px solid black;
+	}
+	#rotateDiv
+	{
+		/*rotate:旋转，单位为deg度，正数代表顺时针，负数为逆时针*/
+	  transform:rotate(30deg);
+	}
+
+
+	/*缩放功能*/
+	.box{
+		width: 300px;
+		height: 300px;
+		border:1px solid;
+	}
+
+	/*hover是设置当鼠标悬停在图片上时，出现的效果*/
+	.box:hover{
+		transform: scale(1.2);/*缩放，里面填倍数，0-1就是缩小 scale:规模*/
+	}
+
+
+	</style>
+
+</head>
+<body>
+<div id = "container">
+	<div>web前端开发</div>
+	<div id="rotateDiv">web前端开发</div>
+</div>
+
+<!-- 缩放 -->
+<div class="box">
+	<img src="../images/地球.png">
+</div>
+
+</html>

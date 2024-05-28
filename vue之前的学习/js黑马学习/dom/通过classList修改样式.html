@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      color: #333;
+    }
+
+    .active {
+      color: red;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">文字</div>
+  <script>
+    // 通过classList添加
+    // 1. 获取元素
+    const box = document.querySelector('.box')
+    // 2. 修改样式
+    // 2.1 追加类 add() 类名不加点，并且是字符串
+    box.classList.add('active')
+    // 2.2 删除类  remove() 类名不加点，并且是字符串
+    box.classList.remove('box')
+
+    // 2.3 切换类  toggle()  有还是没有啊， 有就删掉，没有就加上
+    box.classList.toggle('active')
+    // toggle(class, force)：如果元素有指定的类名，则移除它；如果没有，则添加它。可选的 force 参数用于明确控制添加或移除的行为。
+    // 示例：
+    // const element = document.getElementById('example');
+    // element.classList.toggle('active'); // 切换类名
+    // element.classList.toggle('active', true); // 强制添加类名
+    // element.classList.toggle('active', false); // 强制移除类名
+  </script>
+</body>
+<!-- 
+  classList 是 JavaScript 中用于访问和操作元素的类名的属性。它是一个 DOM 元素的属性，提供了一组方法，用于添加、删除、切换和检查元素的类名。classList 使得管理元素的样式类更加方便和直观。
+
+classList 属性包括以下几个常用的方法：
+
+add(class1, class2, ...)：添加一个或多个类名到元素的类列表中。如果类名已存在，它们不会被重复添加。
+示例：
+const element = document.getElementById('example');
+element.classList.add('new-class');
+
+
+remove(class1, class2, ...)：从元素的类列表中移除一个或多个类名。
+示例：
+const element = document.getElementById('example');
+element.classList.remove('old-class');
+
+toggle(class, force)：如果元素有指定的类名，则移除它；如果没有，则添加它。可选的 force 参数用于明确控制添加或移除的行为。
+示例：
+const element = document.getElementById('example');
+element.classList.toggle('active'); // 切换类名
+element.classList.toggle('active', true); // 强制添加类名
+element.classList.toggle('active', false); // 强制移除类名
+
+contains(class)：检查元素是否包含指定的类名，返回布尔值。
+示例：
+const element = document.getElementById('example');
+const hasClass = element.classList.contains('active');
+
+item(index)：通过索引获取元素的类名。索引从0开始，类名的顺序与它们在元素的 class 属性中出现的顺序一致。
+示例：
+const element = document.getElementById('example');
+const className = element.classList.item(0); // 获取第一个类名
+
+length：获取元素的类名数量。
+示例：
+const element = document.getElementById('example');
+const classCount = element.classList.length; // 获取类名数量
+classList 属性使得在JavaScript中轻松管理元素的类名，特别适用于添加或删除样式，以及与CSS交互。通过这些方法，你可以在不直接操作 class 属性的情况下，更容易地操作元素的样式类。
+ -->
+
+</html>

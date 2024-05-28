@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自定义事件示例</title>
+</head>
+
+
+<!-- 
+  自定义事件是在 JavaScript 中创建的一种自定义事件类型，与浏览器原生事件（如点击、键盘按键、鼠标移动等）不同。
+  自定义事件允许开发者在特定的情况下触发和处理事件，以实现更灵活的应用程序逻辑
+ -->
+
+<body>
+  <button id="customEventButton">点击触发自定义事件</button>
+
+  <script>
+    // 创建自定义事件,要创建自定义事件，可以使用 Event 构造函数来创建一个新的事件对象。通常，你可以为事件提供一个名称（事件类型）作为参数
+    const customEvent = new Event('customEventName');
+
+    // 监听自定义事件
+    document.addEventListener('customEventName', function (event) {
+      console.log('自定义事件被触发！');
+      // 在这里可以处理自定义事件触发后的逻辑
+    });
+
+    // 触发自定义事件的函数
+    function triggerCustomEvent() {
+      //  一旦创建了自定义事件对象，你可以使用 dispatchEvent 方法将事件触发在一个特定的元素上
+      // 触发自定义事件,自定义事件需要手动触发,他不会自动触发的
+      document.dispatchEvent(customEvent);
+    }
+
+    // 按钮点击事件
+    const customEventButton = document.getElementById('customEventButton');
+    customEventButton.addEventListener('click', triggerCustomEvent);
+  </script>
+</body>
+
+</html>

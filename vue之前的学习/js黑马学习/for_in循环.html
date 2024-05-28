@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+    for...in 循环是 JavaScript 中用于遍历对象属性的一种迭代结构。它允许你访问对象的所有可枚举属性，包括对象自身的属性和从原型链继承的属性。以下是关于 for...in 循环的重点讲解：
+
+语法结构：
+
+
+for (variable in object) {
+  // 循环体代码
+}
+variable：在每次迭代中，variable 是一个变量，用于存储当前属性的名称（键）。
+object：要遍历的对象，可以是任何具有可枚举属性的对象。
+遍历对象属性：for...in 循环用于遍历对象的所有可枚举属性，包括自身属性和继承属性。
+每次迭代，variable 会保存一个属性的名称，你可以使用这个名称来访问相应属性的值。
+
+注意事项：
+
+for...in 循环不会按照特定的顺序遍历对象属性，属性的遍历顺序可能是不确定的。
+for...in 循环只会迭代对象的可枚举属性，不包括不可枚举属性。可枚举属性是那些可以通过 for...in 遍历的属性，而不可枚举属性则不能。例如，内置对象的原型属性通常是不可枚举的。
+for...in 循环会迭代对象的自身属性以及继承属性。如果只想遍历对象的自身属性而不包括继承属性，可以使用 hasOwnProperty 方法进行过滤。
+   -->
+</head>
+
+<body>
+  <script>
+    const person = {
+      name: 'Alice',
+      age: 30
+    };
+
+    for (let key in person) {
+      console.log(key + ': ' + person[key]);
+    }
+
+  </script>
+</body>
+
+</html>

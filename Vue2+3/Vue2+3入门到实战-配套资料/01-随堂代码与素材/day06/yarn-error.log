@@ -1,0 +1,27 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add vue-router@3.6.5
+
+PATH: 
+  C:\Program Files\Java\jdk-11.0.12\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\software\mingw64\bin;D:\GO\goenv\bin;C:\Program Files\Java\jdk-11.0.12\bin;D:\software3\apache-tomcat-9.0.73\bin;D:\software3\apache-tomcat-9.0.73\lib;C:\Program Files\MySQL\MySQL Server 8.0\bin\;D:\software3\Maven\apache-maven-3.9.2-bin\apache-maven-3.9.2\bin;D:\software3\Jmeter\apache-jmeter-5.5\bin;D:\software3\sublime\Sublime Text 3;D:\software3\git\Git\cmd;C:\Program Files\nodejs\;D:\software3\sonar-scanner\sonar-scanner-4.8.0.2856-windows\bin;D:\software3\matlab\anzhuang\runtime\win64;D:\software3\matlab\anzhuang\bin;D:\software2\anaconda;D:\software2\anaconda\Library\bin;D:\software2\anaconda\Scripts;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files (x86)\Yarn\bin\;D:\software3\python\Scripts\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;D:\software2\vscode\Microsoft VS Code\bin;D:\GO\goenv\bin;D:\software2\GoLand 2022.1\bin;;C:\Users\Odis\go\bin;D:\software2\pycharm\PyCharm 2022.2\bin;;C:\Users\Odis\AppData\Roaming\npm;C:\Program Files\Java\jdk-11.0.12\bin;D:\software3\WebStorm\WebStorm 2023.1.2\bin;;D:\software2\anaconda\Library\lib;D:\software2\anaconda\Scripts;D:\software2\anaconda;C:\Users\Odis\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 2606:4700::6810:1d22:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

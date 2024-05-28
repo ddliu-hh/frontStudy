@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	  <!-- 1.JavaScript是一种运行于JavaScript解释器/引擎中的解释型脚本语言，运行之前是不需要编译的，运行之前不会
+                   检查错误直到碰到错误为止-->
+
+      <!-- 2.  1、核心(ECMAScript)
+            2、文档对象模型(DOM,Document ObJect ModeI)
+              让JS有能力与网页进行对话
+              3、浏览器对象模型(BOM,Browser Object Model)
+                 让JS有能力与浏览器进行对话 -->
+
+<!-- JS添加方式二：嵌入script标签里1，这种标签可以出现在任何地方 -->
+    <!--     <script type="text/javascript">
+        	alert('内嵌js');
+        </script>
+ -->
+</head>
+<body>
+
+<!-- JS添加方式1:将js代码嵌入元素事件中 -->
+	<button onclick="alert('Hello World')">
+		当点击按钮时，打印消息
+	</button>
+
+
+	<!-- js添加方式三:引用外部.js文件,注意，一旦使用外部文件，script标签里就不能再写任何代码了 -->
+<!-- 	<script src="外部文件.js">
+		
+	</script>
+ -->
+
+	<!-- ECMA部分的使用 -->
+	<script type="text/javascript">
+
+		// @@1 变量及数据类型的规则
+
+		// var是用来声明变量的，尽量不要省略，否则就是定义全局变量了
+		// js是弱类型，由数据来决定这个变量是什么数据类型
+
+		var a=[1,2,3,4];//定义一个数组
+		var sum=0;
+		for (var i = 0; i < a.length; i++) {
+			sum+=a[i];
+		}
+
+		document.write(sum);//打印出总和10
+
+		// 可以一次性声明多个变量,驼峰命名法，第一个单词全小写，从第二个单词开始，首字母大写，若只有一个单词，全小写
+
+		// js是弱类型语言，由数据来决定这个变量是什么数据类型
+		var ageOfMe=10,ageOfMe2=20,ageOfMe3=30;//number类型
+		var TRUE=true;//boolean类型
+		var STRING="15";//string类型
+		
+	</script>
+
+	<!-- dom使用，它的操作对象是网页 -->
+	<p id="change">通过dom改变样式，字号变为24px。</p>
+	<button onclick="document.getElementById('change').style.fontSize='24px'">
+		
+		改变字号
+	</button>
+
+	<!-- Bom使用，它的操作对象是浏览器 ,这里是打开一个新网页-->
+
+    <button onclick="load('baidu')">百度</button>
+    <script type="text/javascript">
+    	function load(website) {
+    		window.open('http://www.baidu.com','_blank','width=600,height=400,top=100px,left=0px')
+    		// 设置出现的方框
+    		// js的返回值不在函数名前面定义，你想要返回直接return就默认你定义了一个返回值了
+    		return 20;
+    	}
+    </script>
+</body>
+</html>

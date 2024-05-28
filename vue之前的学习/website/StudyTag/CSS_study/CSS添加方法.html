@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- 第一种和第二种方式都是在html文件里定义，当文件过多时过于麻烦
+，所以我们还有第三种方式：外部样式表链接样式。这种方式是通过建立
+一个css文件，然后html文件通过链接这个css文件，达到更改样式的目的 -->
+<!-- 优先级:
+        行内样式>内嵌样式>链接样式>浏览器默认样式 -->
+
+
+    <!-- 第二种方法，CSS内嵌样式,这种添加CSS的方式要放在head标签下 -->
+    <!-- 先放一个style标签，指明当前是css结构，再放一个选择器 -->
+    <style type="text/css">
+        p{
+            /*设置字号*/
+            font-size: 12px;
+            /*设置颜色*/
+            /*color: red;*/
+            /*设置加粗*/
+            /*font-weight: bold;*/
+        }
+
+    </style>
+
+
+<!-- 第三种CSS添加方式：外部样式表链接样式 -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+
+<body>
+
+    <h1>
+        加油！前端
+    </h1>
+
+    <!-- 第一种方法：CSS行内样式,直接在p标签添加 -->
+    <p style="color: red;font-size: 12px;">
+        天使投资是指早期投资，尤其是个人早期投资
+    </p>
+</body>
+</html>

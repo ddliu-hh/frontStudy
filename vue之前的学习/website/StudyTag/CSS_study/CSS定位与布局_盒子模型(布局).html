@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        /*用CSS美化区域，盒子原理
+        区域本身+padding部分+边框+外边距*/
+        #box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            padding: 20px;
+            margin: 10px;
+
+            overflow: auto;/*当文字内容超过盒子时，auto表示自动生成滚动条。scroll表示总是生成滚动条。hidden表示超出部分直接隐藏*/
+
+
+        }
+
+        div{
+            border-width: 2px;
+            border-style: solid;
+            border-color: red;
+
+/*也可以3个属性一起写*/
+            border: 2px solid red;
+            /*也可以仅规定一部分，padding,margin同理*/
+            border-bottom: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 先在html代码里定义一个区域 -->
+    <div id="box">
+        必须爱我，没有选择.必须爱我，没有选择.必须爱我，没有选择.必须爱我，没有选择.必须爱我，没有选择.必须爱我，没有选择.必须爱我，没有选择.必须爱我，没有选择
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 
+  可以通过构造函数来快速创建多个类似的对象。
+  构造函数在技术上是常规函数。
+  不过有两个约定：
+1．它们的命名以大写字母开头。
+2．它们只能由"new"操作符来执行。
+ -->
+
+<body>
+  <script>
+    // 创建一个猪 构造函数 
+    function Pig(uname, age) {
+      // this.什么 是你可以自己在对象定义的属性
+      this.lbdname = uname
+      this.lbdage = age
+    }
+
+    // console.log(new Pig('佩奇', 6))
+    // console.log(new Pig('乔治', 3))
+    const p = new Pig('佩奇', 6)
+    console.log(p)
+
+    //  const pepa = { uname: '佩奇', age: 6 }
+
+    // const obj = new Object()
+
+    function Goods(name, price, count) {
+      this.name = name
+      this.price = price
+      this.count = count
+      this.sayhi = function () { }
+    }
+    const mi = new Goods('小米', 1999, 20)
+    console.log(mi)
+    const hw = new Goods('华为', 3999, 59)
+    console.log(hw)
+    console.log(mi === hw)
+    mi.name = 'vivo'
+    console.log(mi)
+    console.log(hw)
+    // const date = new Date('2022-4-8')
+    // console.log(date)
+
+    // 静态成员 
+    Goods.num = 10
+    console.log(Goods.num)
+    Goods.sayhi = function () { }
+  </script>
+</body>
+
+</html>

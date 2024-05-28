@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+    JavaScript 中还允许指定函数中 this 的指向，有3个方法可以动态指定普通函数中this的指向
+call()
+apply()
+bind()
+
+   -->
+</head>
+
+<body>
+  <!-- 
+
+
+   -->
+  <script>
+    const obj = {
+      uname: 'pink'
+    }
+    function fn(x, y) {
+      console.log(this) // window
+      console.log(x + y)
+    }
+    // 1. 调用函数  
+    // 2. 改变 this 指向
+    //     fun.call(thisArg, arg1 , arg2,...)
+    // thisArg:在fun函数运行时指定的this值
+    // arg1, arg2:传递进函数的参数，比如fn这个函数需要两个实参，就填两个
+    // 返回值就是函数的返回值，因为它就是调用函数
+    fn.call(obj, 1, 2)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 
+  1.2事件监听版本
+DOM LO
+事件源.on事件= function() {}
+
+DOM L2
+事件源.addEventListener(事件，事件处理函数)
+区别:
+on方式会被覆盖，addEventListener方式可绑定多次，拥有事件更多特性，推荐使用
+
+
+ -->
+
+<body>
+  <button>点击</button>
+  <button class="button2">点击2</button>
+  <script>
+    const btn = document.querySelector('button')
+    btn.onclick = function () {
+      alert(11)
+    }
+    // 只有22起作用，11被覆盖了
+    btn.onclick = function () {
+      alert(22)
+    }
+
+    // let num = 10
+    // num = 20
+
+    // 两个都起作用
+    const button2 = document.querySelector('.button2')
+    button2.addEventListener('click', function () {
+      alert(11)
+    })
+    button2.addEventListener('click', function () {
+      alert(22)
+    })
+  </script>
+</body>
+
+</html>

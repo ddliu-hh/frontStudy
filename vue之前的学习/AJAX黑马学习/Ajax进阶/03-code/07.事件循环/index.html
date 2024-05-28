@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件循环</title>
+</head>
+
+<!-- 
+  事件循环：
+  JavaScript有一个基于事件循环的并发模型，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。
+  原因:JavaScript 单线程（某一刻只能执行一行代码)，为了让耗时代码不阻塞其他代码运行，设计了事件循环模型
+
+  1．什么是事件循环?
+执行代码和收集异步任务，在调用栈空闲时，反复调用任务队列里回调函数执行机制
+
+3. Javascript内代码如何执行?
+执行同步代码，遇到异步代码交给宿主浏览器环境执
+行异步有了结果后，把回调函数放入任务队列排队
+当调用栈空闲后，反复调用任务队列里的回调函数
+
+
+  事件循环–执行过程
+  定义:执行代码和收集异步任务的模型，在调用栈空闲，反复调用任务队列里回调函数的执行机制，就叫事件循环
+
+同步任务会首先放到调用栈里运行，异步任务一开始会放到宿主环境(浏览器)里，等时间到或点击响应时，就转到任务队列里，如果调用栈里的任务都执行完了，就从任务队列里
+挑选任务放到调用栈里，就这样循环往复，就形成事件循环
+ -->
+
+<body>
+
+  <script>
+    /**
+     * 目标：阅读并回答执行的顺序结果， 都是1 3 5 2 4
+    */
+    console.log(1)
+    setTimeout(() => {
+      console.log(2)
+    }, 0)
+    console.log(3)
+
+    setTimeout(() => {
+      console.log(4)
+    }, 2000)
+    console.log(5)
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<div style="text-align:center;">  
+  <video id="myVideo" width="420" style="margin-top:15px;">
+    <source src="蜡笔.mp4" type="video/mp4" />
+    浏览器不支持HTML5:video
+  </video>
+  <button onclick="playPause()">播放/暂停</button>  
+</div> 
+<script>
+  var v=document.getElementById("myVideo");
+  function playPause()
+  { 
+    if (v.paused) 
+      myVideo.play(); 
+    else 
+      v.pause(); 
+  } 
+</script> 
+</body> 
+</html>

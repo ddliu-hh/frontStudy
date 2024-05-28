@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        /*清空原有设置*/
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+
+        body{
+            font-size: 14px;
+        }
+
+/*设置总容器*/
+        #container{
+            margin: 0 auto;
+            width: 1000px;
+            height: 500px;
+            /*background-color: #6cf;*/
+        }
+
+        /*  3*1设置  */
+
+        #header{
+            height: 300px;
+            background-color: #6cf;
+            margin-bottom: 5px;
+        }
+
+        #main{
+            height: 500px;
+            /*background-color: #cff;*/
+            margin-bottom: 5px;
+        }
+
+
+        #aside{
+            /*由于要分左右，采用浮动定位，这种定位能让盒子向左或向右浮动，这样可以去除上下排列*/
+            float: left;/*向左浮动*/
+            width: 300px;
+            height: 500px;
+            background-color: #6cf;
+            
+            /*clear:清除浮动*/
+            /*both，清除左右两边的浮动。
+              left和right只能清除一个方向的浮动。
+              none是默认值，只在需要移除已指定的清除值时用到。*/
+            clear: right;
+        }
+
+        #content{
+            float: right;
+            width: 695px;
+            height: 500px;
+            background-color: #cff;
+        }
+
+        #footer{
+            height: 60px;
+            background-color: #6cf;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <!-- 总容器 -->
+    <div id="container">
+        <!-- 1.现在实现3*1样式 ，在总容器内部设置三个div标签-->
+         <div id="header"></div>
+              <div id="main">
+
+              <!-- 2.实现2*1左右 -->
+                  <div id="aside"></div>
+                  <div id="content"></div>
+
+              </div>
+              <div id="footer"></div>       
+
+            
+
+    </div>
+</body>
+</html>

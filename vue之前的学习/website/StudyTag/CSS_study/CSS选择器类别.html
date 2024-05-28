@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- 这就是第一种CSS选择器类别-标签选择器 -->
+    <style type="text/css">
+        body{
+            background-color: #ccc;
+            text-align: center;
+            font-size: 12px;
+        }
+        h1{font: "黑体";font-size: 20px;}
+        p{color: black;font-size: 12px;}
+        hr{width: 200px;}
+
+    </style>
+
+
+    <!-- 第二种：类别选择器,这种选择器可以分类选择哪一部分被改变 -->
+    <style type="text/css">
+        /*仅设置类名为one的标签改变，对其他的没有影响*/
+        .one{font-size: 18px}
+        /*仅设置类名为two的标签改变，对其他的没有影响*/
+        .two{font-size: 24px}
+    </style>
+
+<!-- 第三种:id选择器，与class的区别是具有唯一性，只能引用一次,以#号开头 -->
+<style type="text/css">
+    #one{font-size: 12px}
+    #two{font-size: 24px}
+</style>
+
+<!-- 第四：css嵌套使用 ,规定span标签括起来的部分才被css样式影响，其它不被影响-->
+<style type="text/css">
+    p span{
+        color: red;
+    }
+</style>
+
+<!-- 第五：集体声明.用“，”隔开，一起声明某些标签的css样式 -->
+<style type="text/css">
+    h1,h2{
+        text-align: center;
+    }
+</style>
+
+<!-- 第六：全局声明,规定所有网页元素的声明 -->
+<style type="text/css">
+    *{
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>
+    <!-- 标签选择器 -->
+    <h1>标题</h1>
+    <hr>
+    <p>正文的段落</p>
+    版权所有
+    <hr>
+
+<!-- 定义class类名 -->
+    <p class="one">类别选择器1</p>
+    <p class="two">类别选择器2</p>
+<hr>
+    <!-- 定义id -->
+<p id="one">id选择器1</p>
+<p id="two">id选择器2</p>
+
+<!-- 嵌套声明 -->
+<p><span>天使投资</span>是一种早期投资</p>
+
+<!-- 集体声明 -->
+<h1>欢迎来到集体声明h1</h1>
+<h2>欢迎来到集体声明h2</h2>
+
+</body>
+</html>

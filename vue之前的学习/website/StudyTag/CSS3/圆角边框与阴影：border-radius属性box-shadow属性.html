@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		/*圆角边框：可以设置一个盒子左上，左下，右上，右下的弯曲程度，来形成一个类圆角*/
+	 #box1{
+	    height: 100px;
+	    width: 150px;
+	    border: 1px solid blue;
+	    border-top-left-radius: 40px 20px;/*左上，第一个和第二个参数分别是x与y轴的弯曲*/
+	    border-bottom-right-radius:20px;
+	}
+
+	#box2 {    
+        width:350px;
+        height:50px; 
+        border:2px solid #a1a1a1;     
+        background:#ddd;
+
+        border-radius:25px;/*四个角的弯曲*/
+        -moz-border-radius:25px; 
+    }
+
+/*这样可以形成一个圆，因为长宽都是100，弯曲却是50*/
+    #box3  {    
+        width:100px;
+        height:100px; 
+        border:1px solid #a1a1a1;     
+        background:#ddd;
+		border-radius: 50px;
+	}
+
+	#box4{
+		   width:300px;
+		   height:100px;
+		   background-color:#f90;
+		   box-shadow: 10px 10px 5px #888;/*水平，垂直，以及模糊范围*/
+		}
+	</style>
+
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+
+	<!-- 盒子阴影 -->
+	<div id="box4"></div>
+</body>
+</html>

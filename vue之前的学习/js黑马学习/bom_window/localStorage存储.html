@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+  1、数据存储在用户浏览器中
+2、设置、读取方便、甚至页面刷新不丢失数据
+3、容量较大，sessionStorage和localStorage约5M左右
+
+
+localStorage作用:可以将数据永久存储在本地(用户的电脑)，除非手动删除，否则关闭页面也会存在
+特性:
+可以多窗口(页面)共享(同一浏览器可以共享)
+以键值对的形式存储使用
+
+
+sessionStorage特性:
+生命周期为关闭浏览器窗口（重点，一关浏览器就没了）
+在同一个窗口(页面)下数据可以共享
+以键值对的形式存储使用
+用法跟localStorage基本相同
+
+ -->
+
+<body>
+  <script>
+    // 1. 要存储一个名字  'uname'， 'pink老师'
+    // localStorage.setItem('键'，'值')
+    localStorage.setItem('uname', 'pink老师')
+    localStorage.setItem('lbd', '刘博鼎')
+    // 2. 获取方式  都加引号
+    console.log(localStorage.getItem('uname'))
+    // 3. 删除本地存储  只删除名字
+    // localStorage.removeItem('uname')
+    // 4. 改  如果原来有这个键，则是改，如果没有这个键是增
+    localStorage.setItem('uname', 'red老师')
+
+    // 我要存一个年龄
+    // 2. 本地存储只能存储字符串数据类型，别的类型会自动转换成字符串来存
+    localStorage.setItem('age', 18)
+    console.log(localStorage.getItem('age'))
+  </script>
+
+  <!-- sessionStorage例子 -->
+  <button id="saveButton">保存数据</button>
+  <button id="getButton">获取数据</button>
+
+  <script>
+    // 获取按钮元素
+    const saveButton = document.getElementById('saveButton');
+    const getButton = document.getElementById('getButton');
+
+    // 点击保存按钮时触发的事件处理程序
+    saveButton.addEventListener('click', function () {
+      // 存储数据到sessionStorage
+      sessionStorage.setItem('username', 'John');
+      sessionStorage.setItem('age', '30');
+      console.log('数据已保存到sessionStorage');
+    });
+
+    // 点击获取按钮时触发的事件处理程序
+    getButton.addEventListener('click', function () {
+      // 从sessionStorage中获取数据
+      const username = sessionStorage.getItem('username');
+      const age = sessionStorage.getItem('age');
+
+      if (username && age) {
+        console.log('用户名: ' + username);
+        console.log('年龄: ' + age);
+      } else {
+        console.log('未找到数据');
+      }
+    });
+  </script>
+</body>
+
+</html>

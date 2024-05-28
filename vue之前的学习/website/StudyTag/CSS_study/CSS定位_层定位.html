@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+    	border:2px red solid;
+    	color: #fff;
+	}
+	#box1{
+	    width:170px;
+	    height:190px;
+	    position:relative; /*相对定位,相对定位的作用是相对于元素自身原本的位置进行定位。当设置了相对定位后，可以使用top、bottom、left、right属性来调整元素的位置，相对于其原本的位置进行偏移*/
+	}
+	#box2{
+	    width:99%;
+	 	position:absolute;	/*绝对定位，绝对定位的作用是相对于最近的已定位的父元素进行定位。如果没有已定位的父元素，则相对于文档的 body 元素进行定位。绝对定位的元素会脱离正常的文档流，不会占据原本的空间。可以使用top、bottom、left、right属性来精确地定位元素的位置。*/
+		/*bottom:0;    */
+		top: 10px;
+	}
+	</style>
+</head>
+<body>
+	<!-- 我们希望网页的元素可以层叠在另一个元素的上面时，就可以使用层定位 -->
+
+<!-- 下面这个是让文字显示在图片上 ,box1是主属性-->
+	<div id="box1">
+    <img src="../images/地球.png" alt="">
+    <div id="box2">我爱地球</div>
+</div>
+	
+</body>
+</html>
+

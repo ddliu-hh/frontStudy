@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D</title>
+	<style> 
+
+		/*3D变化要设置x,y,z轴的值*/
+	#stage{
+		width: 300px;
+		margin: 100px auto;
+		perspective:200px;/*3D变换中的透视属性，即看起来近大远小*/
+	}
+	.box{
+		width: 100px;
+        height:100px;
+        float:left; 
+        transition:linear 1s;
+        transform-style: preserve-3d;/*如果要3D变换，要设置这个值*/
+	}
+	img
+	{
+		width:100px;
+		height:75px;
+	}
+	.x:hover
+	{		
+		transform:rotateX(60deg);/*X轴变换,这种变换是绕着X轴旋转，其它轴同理*/
+
+	}
+	.y:hover
+	{		
+		transform:rotateY(180deg);/*Y*/
+	}
+	.z:hover
+	{		
+		transform:rotateZ(60deg);/*Z*/
+	}
+	</style>
+
+</head>
+<body>
+<div id="stage">
+	<div class="box x">
+		<img src="../images/地球.png" />
+	</div>
+	<div class="box y">
+		<img src="../images/地球.png" />
+	</div>
+	<div class="box z">
+		<img src="../images/地球.png" />
+	</div>
+</div>
+</body>
+</html>

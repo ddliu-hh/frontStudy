@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS伪类选择器示例</title>
+  <style>
+    /* :hover 伪类选择器示例 */
+    a:hover {
+      color: red;
+      /* 当鼠标悬停在链接上时改变文本颜色 */
+    }
+
+    /* :active 伪类选择器示例 */
+    button:active {
+      background-color: #007bff;
+      /* 当按钮被点击时改变背景颜色 */
+    }
+
+    /* :visited 伪类选择器示例 */
+    a:visited {
+      color: purple;
+      /* 已访问链接的文本颜色 */
+    }
+
+    /* :not 伪类选择器示例 */
+    p:not(.special) {
+      font-style: italic;
+      /* 所有除了带有 .special 类的段落都设置为斜体 */
+    }
+
+    /* :nth-child(n)：选择在其父元素中是第 n 个子元素的元素。你可以使用这个选择器来选择特定位置的子元素。 */
+    /* CSS 伪类（nth-child）: 在 CSS 中，伪类 :nth-child 用于选择元素，它的索引是从 1 开始的。 */
+    li:nth-child(odd) {
+      background-color: #6cc674;
+      /* 奇数位置的列表项设置背景颜色 */
+    }
+
+    /* :first-child 伪类选择器示例 */
+    ul>li:first-child {
+      font-weight: bold;
+      /* 第一个子元素设置为粗体 */
+    }
+
+    /* :enabled 和 :disabled 伪类选择器示例 */
+    input:enabled {
+      border: 2px solid #00cc00;
+      /* 启用的输入框设置边框 */
+    }
+
+    input:disabled {
+      background-color: #f0f0f0;
+      /* 禁用的输入框设置背景颜色 */
+    }
+
+    /* :empty 伪类选择器示例 */
+    div:empty {
+      display: none;
+      /* 隐藏没有子元素或文本内容的 div 元素 */
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#">已访问链接</a>
+  <button>点击按钮</button>
+  <p>这是一个普通段落</p>
+  <p class="special">这是一个特殊段落</p>
+  <ul>
+    <li>第一项</li>
+    <li>第二项</li>
+    <li>第三项</li>
+    <li>第四项</li>
+    <li>第五项</li>
+  </ul>
+  <ul>
+    <li>粗体项</li>
+    <li>普通项</li>
+    <li>普通项</li>
+  </ul>
+  <input type="text" value="启用输入框">
+  <input type="text" value="禁用输入框" disabled>
+  <div></div>
+  <div>有内容的 div</div>
+</body>
+
+<!-- 
+除了 :focus 伪类选择器之外，CSS还提供了许多其他伪类选择器，用于选择不同状态或条件下的元素。以下是一些常见的伪类选择器：
+
+:hover：选择鼠标悬停在元素上的状态。通常用于定义鼠标悬停时的样式。
+
+:active：选择元素在被激活（例如，当用户点击按钮时）时的状态。通常用于定义按下按钮时的样式。
+
+:visited：选择用户已访问过的链接的状态。这个选择器通常用于定义已访问链接的样式。
+
+:not(selector)：选择不匹配指定选择器的元素。例如，:not(.hidden) 会选择所有不带 hidden 类的元素。
+
+:nth-child(n)：选择在其父元素中是第 n 个子元素的元素。你可以使用这个选择器来选择特定位置的子元素。
+
+:first-child 和 :last-child：选择其父元素中的第一个和最后一个子元素。
+
+:nth-of-type(n)：选择在其父元素中是第 n 个相同类型元素的元素。
+
+:first-of-type 和 :last-of-type：选择其父元素中的第一个和最后一个相同类型元素。
+
+:enabled 和 :disabled：选择启用和禁用的表单元素。
+
+:empty：选择没有子元素或文本内容的元素。
+
+这些伪类选择器可以帮助你根据不同的条件或状态选择元素，并为它们定义不同的样式。
+ -->
+
+</html>

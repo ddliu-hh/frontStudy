@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+    加载外部资源（如图片、外联CSS和JavaScript等）加载完毕时触发的事件
+    为什么要学?
+有些时候需要等页面资源全部处理完了做一些事情
+老喜欢把代码script写在head中，这时候直接找dom元素找不到事件名: load
+监听页面所有资源加载完毕:给window添加load事件
+
+   -->
+  <script>
+    // 等待页面所有资源加载完毕，就回去执行回调函数
+    window.addEventListener('load', function () {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function () {
+        alert(11)
+      })
+    })
+
+    // img.addEventListener('load', function () {
+    //   // 等待图片加载完毕，再去执行里面的代码
+    // })
+
+    // 当初始的HTML文档被完全加载和解析完成之后，DOMContentLoaded事件被触发，而无需等待样式表、图像等完全加载
+    // 事件名:DOMcontentLoaded，可以理解为load的缩减版
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function () {
+        alert(11)
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <button>点击</button>
+
+</body>
+
+</html>

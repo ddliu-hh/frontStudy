@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+  DOM节点
+DOM树里每一个内容都称之为节点
+节点类型：
+1.元素节点
+所有的标签比如body. divhtml是根节点
+2.属性节点
+所有的属性比如href
+3.文本节点
+所有的文本
+4.其他
+
+ -->
+
+<body>
+  <div class="yeye">
+    <div class="dad">
+      <div class="baby">x</div>
+    </div>
+  </div>
+  <!-- 
+    父节点查找:
+parentNode属性
+返回最近一级的父节点找不到返回为null
+
+   -->
+  <script>
+    const baby = document.querySelector('.baby')
+    console.log(baby)  // 返回dom对象
+    console.log(baby.parentNode)  // 返回dom对象
+    console.log(baby.parentNode.parentNode)  // 返回dom对象
+  </script>
+</body>
+
+</html>

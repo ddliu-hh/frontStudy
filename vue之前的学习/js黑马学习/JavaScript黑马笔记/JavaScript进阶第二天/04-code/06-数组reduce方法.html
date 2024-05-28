@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 作用：reduce返回累计处理的结果，经常用于求和等 
+1．如果有起始值，则把初始值累加到里面
+-->
+
+<body>
+  <script>
+    // arr.reduce(function(累计值, 当前元素){}, 起始值)
+    const arr2 = [1, 2, 3]
+    const total = arr2.reduce(function (prev, item) {
+      // console.log(11)
+      // console.log(prev)
+      return prev + item
+    }, 5)
+    console.log(total)
+    // arr.reduce(function (prev, item) {
+    //   console.log(11)
+    //   // console.log(prev)
+    //   return prev + item
+    // })
+
+    // 箭头函数写法
+    const arr = [1, 2, 3]
+    const re = arr.reduce((prev, item) => prev + item)
+    console.log(re)
+  </script>
+
+
+  <script>
+    const arr3 = [{
+      name: '张三',
+      salary: 10000
+    }, {
+      name: '李四',
+      salary: 10000
+    }, {
+      name: '王五',
+      salary: 20000
+    },
+    ]
+    // 涨薪的钱数  10000 * 0.3 
+    // const money = arr.reduce(function (prev, item) {
+    //   return prev + item.salary * 0.3
+    // }, 0)
+    // arr3调用reduce方法，它这个对象会做为会整体传到item,但是我只想要salary,所以要.salary
+    const money = arr3.reduce((prev, item) => prev + item.salary * 0.3, 0)
+    console.log(money)
+  </script>
+</body>
+
+</html>

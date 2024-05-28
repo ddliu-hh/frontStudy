@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>接口文档</title>
+</head>
+
+<!-- 
+  接口文档:描述接口的文章
+接口的定义:使用AJAX和服务器通讯时，使用的URL，请求方法，以及参数
+接口一般是后端工程师给的,这里有黑马的
+ -->
+
+<body>
+  <button class="btn">用户登录</button>
+  <button class="jiekou">查看黑马前端接口</button>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // 用户注册
+    // axios({
+    //   url: 'http://hmajax.itheima.net/api/register',
+    //   method: 'post',
+    //   data: {
+    //     username: 'itheima007',
+    //     password: '7654321'
+    //   }
+    // })
+
+    document.querySelector('.btn').addEventListener('click', () => {
+      // 用户登录
+      axios({
+        url: 'http://hmajax.itheima.net/api/login',
+        method: 'post',
+        data: {
+          username: 'itheima007',
+          password: '7654321'
+        }
+      })
+    })
+
+    document.querySelector('.jiekou').addEventListener('click', () => {
+      location.href = 'https://apifox.com/apidoc/shared-fa9274ac-362e-4905-806b-6135df6aa90e/doc-842135'
+    })
+  </script>
+</body>
+
+</html>

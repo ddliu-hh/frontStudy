@@ -1,0 +1,41 @@
+<!-- 
+这部分记得看笔记
+  什么是 Webpack?
+定义:
+本质上,webpack是一个用于现代.JavaScript 应用程序的静态模块打包工具。当webpack处理应用程序时，它会在内部从一个或多个入口点构建一个依赖图(dependency graph)，然后将你项目中所需的每一个模块组合成一个或多个bundles，它们均为静态资源，用于展示你的内容。
+静态模块:指的是编写代码过程中的,html,css, js，图片等固定内容的文件
+
+打包:把静态模块内容，压缩，整合，转译等（前端工程化)
+√把less / sass转成css 代码
+√把ES6+降级成ES5
+√支持多种模块标准语法
+
+
+使用Webpack
+需求:封装utils包，校验手机号长度和验证码长度，在src/index.js 中使用并打包观察步骤:
+
+1.新建并初始化项目，编写业务源代码
+2． 下载 webpack webpack-cli到当前项目中（版本独立)，并配置局部自定义命令
+3．运行打包命令，自动产生dist分发文件夹（压缩和优化后，用于最终运行的代码)
+
+npm i webpack webpack-cli --save-dev
+
+"scripts": {
+"build" :"webpack"}，
+
+npm run build
+
+src文件夹  -》Node环境+webpack   -》dist文件夹
+
+
+3.webpack打包css 代码：
+加载器cs-loader:_解析css 代码
+加载器style-loader:把解析后的css 代码插入到DOM
+步骤:
+1.准备css文件代码引入到src/login/index.js 中（压缩转译处理等
+
+2.下载css-loader和style-loader 本地软件包
+
+3．配置webpack.config.js 让Webpack拥有该加载器功能
+
+ -->

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 
+实例属性length用来获取字符串的度长(重点)
+实例方法split( '分隔符')用来将字符串拆分成数组(重点)
+实例方法 substring (需要截取的第一个字符的索引[ ,结束的索引号])用于字符串截取(重点)
+实例方法startswith(检测字符串[，检测位置索引号])检测是否以某字符开头(重点)
+实例方法includes(搜索的字符串[，检测位置索引号])判断一个字符串是否包含在另一个字符串中，根据情况返回true或 false(重点)
+实例方法toUppercase用于将字母转换成大写
+实例方法 toLowerCase用于将字母转换成小写
+实例方法 indexof检测是否包含某字符
+实例方法endswith检测是否以某字符结尾
+实例方法 replace用于替换字符串，支持正则匹配
+实例方法match用于查找字符串，支持正则匹配
+
+ -->
+
+<body>
+  <script>
+    // 示例字符串
+    const str = 'Hello, World!';
+
+    // 实例属性 length
+    const length = str.length; // 获取字符串的长度，这里长度是 13
+    console.log(length); // 输出: 13
+
+    // 实例方法 split(separator[, limit])
+    const fruits = str.split(','); // 使用逗号作为分隔符将字符串拆分成数组
+    console.log(fruits); // 输出: ["Hello", " World!"]
+
+    // 实例方法 substring(start[, end])
+    const substring = str.substring(7, 12); // 从索引 7 开始截取，不包含索引 12
+    console.log(substring); // 输出: "World"
+
+    // 实例方法 startsWith(searchString[, position])
+    const startsWithHello = str.startsWith('Hello'); // 检测字符串是否以 'Hello' 开头
+    console.log(startsWithHello); // 输出: true
+
+    // 实例方法 includes(searchString[, position])
+    const includesWorld = str.includes('World'); // 检测字符串是否包含 'World'
+    console.log(includesWorld); // 输出: true
+
+    // 实例方法 toUpperCase
+    const upperCaseStr = str.toUpperCase(); // 将字符串转换为大写
+    console.log(upperCaseStr); // 输出: "HELLO, WORLD!"
+
+    // 实例方法 toLowerCase
+    const lowerCaseStr = str.toLowerCase(); // 将字符串转换为小写
+    console.log(lowerCaseStr); // 输出: "hello, world!"
+
+    // 实例方法 indexOf(searchValue[, fromIndex])
+    const indexOfComma = str.indexOf(','); // 查找逗号的索引位置
+    console.log(indexOfComma); // 输出: 5
+
+    // 实例方法 endsWith(searchString[, length])
+    const endsWithWorld = str.endsWith('World!'); // 检测字符串是否以 'World!' 结尾
+    console.log(endsWithWorld); // 输出: true
+
+    // 实例方法 replace(searchValue, replaceValue)
+    const replacedStr = str.replace('World', 'Universe'); // 替换 'World' 为 'Universe'
+    console.log(replacedStr); // 输出: "Hello, Universe!"
+
+    // 实例方法 match(regexp)，逗号不匹配，因此当遇到逗号或其他非单词字符时，匹配操作会中断，之前匹配到的字符会被组成一个单词。
+    const regex = /\w+/g; // 正则表达式，匹配单词
+    const matches = str.match(regex); // match 方法会返回一个数组，其中包含了与正则表达式匹配的所有子字符串
+    console.log(matches); // 输出: ["Hello", "World"]
+
+  </script>
+</body>
+
+</html>

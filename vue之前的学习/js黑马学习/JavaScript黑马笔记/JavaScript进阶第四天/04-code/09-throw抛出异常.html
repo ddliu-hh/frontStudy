@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 
+    总结:
+1.throw抛出异常信息，程序也会终止执行
+2. throw后面跟的是错误提示信息
+3.Error对象配合throw使用，能够设置更详细的错误信息,不写Error也行
+
+   -->
+  <script>
+    function fn(x, y) {
+      if (!x || !y) {
+        // throw '没有参数传递进来'
+        throw new Error('没有参数传递过来')
+        throw new Error('hello')
+      }
+      return x + y
+    }
+    console.log(fn())
+
+    // function lbd(k,l) {
+    //   if (!l) {
+    //     return hello
+    //   }
+      
+    // }
+  </script>
+</body>
+
+</html>

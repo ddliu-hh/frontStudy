@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 修饰符约束正则执行的某些细节行为如:是否区分大小写、是否支持多行匹配等 -->
+<!-- 
+  语法:
+  /表达式/修饰符
+
+  修饰符有两个:
+  i是单词ignore的缩写，正则匹配时字母不区分大小写
+  g是单词global的缩写.匹配所有满足正则表达式结果,全局替换
+ -->
+
+<body>
+  <script>
+    console.log(/^java$/.test('java'))//true
+    console.log(/^java$/i.test('JAVA'))//i 正则匹配时字母不区分大小写,true
+    console.log(/^java$/i.test('Java'))
+    const str = 'java是一门编程语言， 学完JAVA工资很高'
+    // const re = str.replace(/java|JAVA/g, '前端')//  |  代表或的意思,还不如写i呢
+    const re = str.replace(/java/ig, '前端')//replace表示替换,把满足正则表达式的用逗号后面的来替换
+    console.log(re)  // 前端是一门编程语言， 学完前端工资很高
+  </script>
+</body>
+
+</html>

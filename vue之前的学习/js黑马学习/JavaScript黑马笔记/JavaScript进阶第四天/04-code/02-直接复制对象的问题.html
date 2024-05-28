@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+    在 JavaScript 中，对象的赋值是赋值引用（地址），而不是赋值值。这意味着当你将一个对象赋给另一个变量时，实际上是将对象的引用（内存地址）复制给了新变量，而不是复制对象本身的值。
+
+这意味着如果你修改了一个变量引用的对象，那么另一个变量也会受到影响，因为它们都引用同一个对象。这是因为它们共享相同的内存地址。
+   -->
+</head>
+
+<body>
+  <script>
+    const obj = {
+      uname: 'pink',
+      age: 18
+    }
+    const o = obj
+    console.log(o)
+    o.age = 20
+    console.log(o)
+    console.log(obj)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+				//1、生成一个随机数(0-99)
+				//var r = parseInt(Math.random()*100);
+
+				/*1、循环外*/
+				//1、生成随机数
+				var r = parseInt(Math.random()*100);
+				/*2、循环内*/
+				//2.1 循环条件：exit  while(true){ break; }
+				//2.2 循环操作
+					//1、输入数字
+					//2、判断数据是否为 exit，是否推出
+					//3、比较大小，给出提示
+					//4、如果猜对了，提示正确并退出循环
+				do{
+					var input=prompt("请输入一个数字，输入exit退出:");
+					
+					if(input == "exit"){
+						alert("程序退出!");
+					}else if(input>r){
+						alert("您输入大了，请重新输入");
+					}else if(input<r){
+						alert("您输入小了，请重新输入");
+					}else{
+						alert("恭喜您，猜对了!");
+					}
+				}while(input!="exit"&&input != r);
+				alert("程序结束!!!");
+				
+		</script>
+	</body>
+</html>

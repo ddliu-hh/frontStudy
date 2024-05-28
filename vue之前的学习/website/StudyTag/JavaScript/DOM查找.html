@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#code{
+		width: 100px;
+		height: 50px;
+		background-color: lightblue;
+		font-size: 44px;
+		letter-spacing: 5px;
+	}
+	</style>
+</head>
+<body>
+	<script>
+	function createRandCode(){
+		var chars=['a','b','c','1','2','3'];
+		var randcode="";
+		for(var i=0;i<3;i++){//3位随机码
+			var randpos =Math.floor(Math.random() * chars.length);	//视频修改，以这个为准		
+			randcode+= chars[randpos];
+		}
+		// 按id精确查找某一元素
+		var elem1=document.getElementById("code").innerHTML=randcode;
+		var elem2=document.getElementById("code");
+
+	
+	}
+
+
+
+
+	</script>
+	<div id="code"></div>
+	<button onclick="createRandCode()">验证码</button>
+	
+</body>
+</html>

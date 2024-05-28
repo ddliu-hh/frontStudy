@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>form表单以及表单元素</title>
+</head>
+<body>
+    <!-- 表单是采集用户信息的一个区域，表单元素是文本框，密码框之类的 -->
+    <!-- action是form标签的一个重要属性，表示采集来的信息交给web后端的哪一个界面来处理 -->
+    <form action="数据处理网页">
+        <!-- value:设置input的默认值 -->
+        性名：
+        <input class="text1" type="text" name="name" value="请输入名字" />
+        <br>
+        密码：
+        <input type="password" name="userpass" />
+        <br>
+        <!-- 文本和密码框的name是供后端检测信息来自哪一个表单元素的 -->
+
+        <!-- 单选 -->
+        男:<input type="radio" value="man" name="gender" checked="checked" />
+        女：<input type="radio" value="woman" name="gender"  />
+
+        <br />
+        <!-- 多选 -->
+        爱好:<br>
+        <input type="checkbox" value="1" name="interest" checked="checked">音乐
+        <br/>
+        <input type="checkbox" value="2" name="interest">体育
+        <br/>
+        <input type="checkbox" value="3" name="interest">阅读
+
+        <hr />
+        <!-- 下拉列表 -->
+        爱好:
+        <select>
+            <option selected="selected">游泳</option>
+            <option>跑步</option>
+        </select>
+        <hr />
+
+        <!-- 文本域 -->
+        <textarea cols="30" rows="10" 
+            onfocus="if(value=='请输入发送内容'){value=''}"  
+            onblur="if (value ==''){value='请输入发送内容'}">
+
+            请输入发送内容
+            
+        </textarea>
+
+        <hr>
+        <input type="submit" value="上传" name="submit" disabled>
+        <input type="reset"  value="重置" name="重置">
+    </form>
+
+    <script type="text/javascript">
+        // 可修改form表单里的值
+        const text1=document.querySelector('.text1')
+        text1.value='hello world'
+        document.write(text1.value)
+    </script>
+</body>
+</html>

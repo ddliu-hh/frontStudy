@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+  join 是JavaScript中用于将数组元素连接成一个字符串的方法。
+它可以在一个特定的分隔符字符的帮助下，将数组的各个元素连接在一起，并返回一个新的字符串
+
+  注意以下几点关于 join 方法的重要信息：
+返回值：join 方法返回一个新的字符串，包含了数组中的所有元素连接在一起的结果。
+分隔符：分隔符参数是可选的，如果不提供，将使用默认的逗号 , 作为分隔符。
+数组元素：join 方法会将数组的所有元素转换为字符串并连接在一起。如果数组包含非字符串类型的元素，它们会在连接之前被自动转换为字符串。
+空数组：如果数组为空，join 方法仍然会返回一个空字符串。
+join 方法通常用于将数组元素合并为一个格式化的字符串，例如用于生成逗号分隔的值，构建URL查询参数，或构建HTML标记等。
+ -->
+
+<body>
+  <script>
+    const fruits = ['apple', 'banana', 'cherry', 'date'];
+    const joinedString = fruits.join(', ');
+    console.log(joinedString);//返回  ‘apple, banana, cherry, date’
+
+  </script>
+</body>
+
+</html>

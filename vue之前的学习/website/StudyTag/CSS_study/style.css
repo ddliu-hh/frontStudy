@@ -1,0 +1,13 @@
+
+/*css文件里直接定义段落，标题等的信息便好*/
+p{
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*标题要指明是几级标题*/
+h1{
+    color: blue;
+
+}

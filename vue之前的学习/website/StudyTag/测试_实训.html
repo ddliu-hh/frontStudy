@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>问卷查询</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    button {
+      padding: 6px 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>问卷查询</h1>
+  <input type="text" id="searchInput" placeholder="请输入关键词">
+  <button onclick="search()">查询</button>
+
+  <table id="surveyTable">
+    <tr>
+      <th>问卷</th>
+      <th>答卷人</th>
+      <th>答卷时间</th>
+      <th>操作</th>
+    </tr>
+    <tr>
+      <td>问卷1</td>
+      <td>张三</td>
+      <td>2023-06-22</td>
+      <td><button onclick="editSurvey()">编辑</button></td>
+    </tr>
+    <tr>
+      <td>问卷2</td>
+      <td>李四</td>
+      <td>2023-06-23</td>
+      <td><button onclick="editSurvey()">编辑</button></td>
+    </tr>
+    <!-- 可以在这里添加更多问卷数据行 -->
+  </table>
+
+  <script>
+    function search() {
+      var input = document.getElementById('searchInput').value.toLowerCase();
+      var table = document.getElementById('surveyTable');
+      var rows = table.getElementsByTagName('tr');
+
+      for (var i = 0; i < rows.length; i++) {
+        var columns = rows[i].getElementsByTagName('td');
+        var found = false;
+
+        for (var j = 0; j < columns.length; j++) {
+          var cellValue = columns[j].textContent.toLowerCase();
+
+          if (cellValue.indexOf(input) > -1) {
+            found = true;
+            break;
+          }
+        }
+
+        if (found) {
+          rows[i].style.display = '';
+        } else {
+          rows[i].style.display = 'none';
+        }
+      }
+    }
+
+    function editSurvey() {
+      // 在这里添加编辑问卷的逻辑
+      alert('编辑问卷');
+    }
+  </script>
+</body>
+</html>

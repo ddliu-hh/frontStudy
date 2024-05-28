@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sakura Falling</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #f5f5f5;
+    }
+
+    .sakura {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #ff95ca;
+      pointer-events: none;
+      z-index: 1;
+      animation: falling linear infinite;
+    }
+
+    @keyframes falling {
+      from {
+        transform: translate(0, -10px) rotate(45deg) scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: translate(calc(-100vw + 100%), 100vh) rotate(45deg) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // JavaScript 实现樱花飘落特效
+    const createSakura = () => {
+      const sakura = document.createElement('div');
+      sakura.classList.add('sakura');
+      sakura.style.left = `${Math.random() * window.innerWidth}px`;
+      document.body.appendChild(sakura);
+
+      const duration = Math.random() * 5 + 5; // 随机飘落时间
+      const delay = Math.random() * 3; // 随机延迟
+
+      sakura.style.animationDuration = `${duration}s`;
+      sakura.style.animationDelay = `${delay}s`;
+
+      // 飘落结束后移除元素
+      sakura.addEventListener('animationiteration', () => {
+        sakura.style.left = `${Math.random() * window.innerWidth}px`;
+      });
+    };
+
+    // 创建多个樱花效果
+    for (let i = 0; i < 30; i++) {
+      createSakura();
+    }
+  </script>
+</body>
+</html>

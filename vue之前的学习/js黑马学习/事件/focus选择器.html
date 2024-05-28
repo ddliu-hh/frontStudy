@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      width: 200px;
+      transition: all .3s;
+    }
+
+    /* focus伪类选择器  获得焦点时触发 */
+    /* 
+    input:focus 是CSS中的伪类选择器，用于选择处于焦点状态的 <input> 元素。
+    当用户点击或通过键盘输入来聚焦（即选中）某个输入框时，该输入框将处于焦点状态。
+    此时，你可以使用 :focus 伪类来定义输入框在焦点状态下的样式。
+     */
+    input:focus {
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text">
+</body>
+
+</html>

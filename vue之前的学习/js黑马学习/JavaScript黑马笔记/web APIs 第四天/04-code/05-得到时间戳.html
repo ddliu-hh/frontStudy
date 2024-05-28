@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+  什么是时间戳:
+是指1970年01月01日00时00分00秒起至现在的毫秒数，它是一种特殊的计量时间的方式
+
+ -->
+
+<body>
+  <!-- 获得时间戳的三种写法 -->
+  <script>
+    // 1. getTime()
+    const date = new Date()
+    console.log(date.getTime())
+    // 2. +new Date()
+    console.log(+new Date())
+    // 3. Date.now()
+    // 无需实例化
+    // 但是只能得到当前的时间戳，而前面两种可以返回指定时间的时间戳
+    console.log(Date.now());
+
+
+
+    // 2. +new Date()
+    console.log(+new Date())
+    console.log('-----------------');
+    console.log(+new Date('2022-4-1 18:30:00'))//指定时间的时间戳
+
+    // 我要根据日期 Day()  0 ~ 6  返回的是 星期一
+    const arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+    // const date = new Date()
+    console.log(arr[new Date().getDay()])
+  </script>
+</body>
+
+</html>

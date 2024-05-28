@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 弹窗示例</title>
+</head>
+
+<body>
+  <script>
+    // 示例1: alert 弹窗
+    // alert 弹窗用于向用户显示一条消息，通常用于显示信息或警告，用户只能点击确认按钮来关闭它。
+    // alert 弹窗没有返回值
+    alert('这是一个警告消息！');
+
+    // 示例2: confirm 弹窗
+    // confirm 弹窗用于向用户显示一个确认框，通常用于要求用户进行二选一的选择，即确认或取消。
+    // 用户可以点击确认按钮或取消按钮来关闭它。
+    // confirm 弹窗返回一个布尔值，表示用户的选择，如果点击确认返回 true，点击取消返回 false。
+    const result = confirm('你确定要执行这个操作吗？');
+    if (result) {
+      // 用户点击了确认按钮
+      console.log('用户点击了确认按钮');
+    } else {
+      // 用户点击了取消按钮
+      console.log('用户点击了取消按钮');
+    }
+
+    // 示例3: prompt 弹窗
+    // prompt 弹窗用于向用户显示一个带有文本输入框的对话框，通常用于获取用户输入的文本信息。
+    // 用户可以输入文本并点击确认按钮或取消按钮来关闭它。
+    // prompt 弹窗返回用户输入的文本，如果点击取消或关闭对话框，返回 null。
+    const userInput = prompt('请输入你的姓名：', '默认值');
+    if (userInput !== null) {
+      // 用户输入了姓名
+      console.log('你输入的姓名是：', userInput);
+    } else {
+      // 用户点击了取消按钮或关闭对话框
+      console.log('用户取消了输入。');
+    }
+  </script>
+</body>
+
+</html>

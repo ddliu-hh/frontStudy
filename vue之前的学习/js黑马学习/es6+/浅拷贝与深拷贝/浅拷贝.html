@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- 
+    在 JavaScript 中，对象的赋值是赋值引用（地址），而不是赋值值。这意味着当你将一个对象赋给另一个变量时，实际上是将对象的引用（内存地址）复制给了新变量，而不是复制对象本身的值。
+
+这意味着如果你修改了一个变量引用的对象，那么另一个变量也会受到影响，因为它们都引用同一个对象。这是因为它们共享相同的内存地址。
+  所以要采取别的赋值方法
+-->
+
+</head>
+
+<!-- 
+    浅拷贝∶如果是简单数据类型拷贝值，引用数据类型拷贝的是地址(简单理解:如果是单层对象，没问题，如果有多层就有问题)
+它只适用于单层，如果对象里还有对象，那么一旦你改了里面这个对象，所有的都会变
+    常见方法:
+1.拷贝对象:Object.assgin()/展开运算符{...obj}拷贝对象
+
+⒉.拷贝数组:Array.prototype.concat()或者[...arr]
+
+   -->
+
+<body>
+  <script>
+    const obj = {
+      uname: 'pink',
+      age: 18,
+      family: {
+        baby: '小pink'
+      }
+    }
+    // 浅拷贝
+    const oo = { ...obj }
+    console.log(oo)//原obj不受影响
+
+
+    const o = {}
+    Object.assign(o, obj)
+    o.age = 20
+    o.family.baby = '老pink'//obj里的baby也被改了
+    console.log(o)
+    console.log(obj)
+  </script>
+</body>
+
+</html>

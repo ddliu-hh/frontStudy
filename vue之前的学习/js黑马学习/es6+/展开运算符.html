@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr1 = [1, 2, 3]
+    // 展开运算符(它和剩余函数一样都是三个点) ...  可以展开数组，但它不会修改数组
+    // 典型运用场景：求数组最大值（最小值）、合并数组等
+    console.log(...arr1)
+
+    // console.log(Math.max(1, 2, 3))
+    // ...arr1  === 1,2,3
+    // 1 求数组最大值，因为max不能用于数组，所以需要将数组展开
+    console.log(Math.max(...arr1)) // 3
+    console.log(Math.min(...arr1)) // 1
+    // 2. 合并数组
+    const arr2 = [3, 4, 5]
+    const arr = [...arr1, ...arr2]
+    console.log(arr)
+
+  </script>
+</body>
+
+</html>

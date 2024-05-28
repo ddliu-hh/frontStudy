@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档流</title>
+
+<!-- 文档流种，有三种元素，block(占一行，可调宽高),inline(不占一行，不可调宽高),inline-block(不独占一行，可调宽高),用display相互转换 -->
+    <style type="text/css">
+        /*先让浏览器默认的内边距和外边距都为0，方便后面设置*/
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+/*设置区域内容*/
+        #nav{
+            width: 300px;
+            margin: 100px auto;
+            font-size: 0;/*这个是取消链接之间下划线的空隙的*/
+        }
+
+/*设置链接标签css*/
+        a{
+            /*可以看成是可以水平排列的block元素*/
+            display: inline-block;/*在这里设置block等排列方式*/
+            width: 80px;
+            height: 30px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /*下面是设置当鼠标悬停在链接上时的显示效果*/
+        a:hover{
+            color: white;
+            background-color: #ccc;
+            border: 1px solid;
+            border-left-color: orange;
+            border-top-color: orange;
+            border-right-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="nav">
+        <a href="http://www.w3school.com.cn">w3shc</a>
+        <a href="http://www.w3c.org">w3c组织</a>
+        <a href="https://www.baidu.com/">百度</a>
+    </div>
+</body>
+</html>

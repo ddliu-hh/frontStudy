@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 
+constructor属性
+在哪里?每个原型对象里面都有个constructor属性(constructor构造函数)
+作用:该属性指向该原型对象的构造函数，简单理解，就是指向我的爸爸，我是有爸爸的孩子
+
+ -->
+
+<body>
+  <script>
+    // constructor  单词 构造函数
+
+    // Star.prototype.sing = function () {
+    //   console.log('唱歌')
+    // }
+    // Star.prototype.dance = function () {
+    //   console.log('跳舞')
+    // }
+    function Star() {
+    }
+    // console.log(Star.prototype)
+    Star.prototype = {
+      // 从新指回创造这个原型对象的 构造函数
+      constructor: Star,
+      sing: function () {
+        console.log('唱歌')
+      },
+      dance: function () {
+        console.log('跳舞')
+      },
+    }
+    console.log(Star.prototype)
+    // console.log(Star.prototype.constructor)
+
+    // const ldh = new Star()
+    // console.log(Star.prototype.constructor === Star)
+  </script>
+</body>
+
+</html>

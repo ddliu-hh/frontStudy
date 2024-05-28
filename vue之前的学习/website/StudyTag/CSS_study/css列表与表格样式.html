@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- 用CSS改变html文件里的列表样式 -->
+    <style type="text/css">
+        .inside{
+            list-style-position: inside;
+            /*将列表前面加上图片，填相对路径*/
+            list-style-image: url(../images/star.png);
+        }
+
+        .outside{
+            list-style-position: outside;
+        }
+    </style>
+
+<!-- CSS改变表格样式 -->
+    <style type="text/css">
+         table{
+            width: 500px;
+            height: 200px;
+
+            
+
+         }
+
+         table,th,td{
+            border: 1px solid;
+
+         }
+         
+/*奇偶选择器*/
+ tr:nth-child(odd)
+            {
+                background-color: #EAF2D3;
+            }
+         
+
+    </style>
+
+</head>
+<body>
+
+<!-- 列表 -->
+    <ul class="inside">
+        <li>HTML-网页结构</li>
+        <li>CSS-网页样式</li>
+        <li>JS-网页交互</li>
+    </ul>
+
+    <ul class="outside">
+        <li>HTML-网页结构</li>
+        <li>CSS-网页样式</li>
+        <li>JS-网页交互</li>
+    </ul>
+    
+    <hr>
+    <!-- 表格 -->
+    <table>
+        <tr>
+            <th>班级</th>
+            <th>人数</th>
+        </tr>
+        <tr>
+            <td>一班</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>二班</td>
+            <td>50</td>
+        </tr>
+    </table>
+</body>
+</html>

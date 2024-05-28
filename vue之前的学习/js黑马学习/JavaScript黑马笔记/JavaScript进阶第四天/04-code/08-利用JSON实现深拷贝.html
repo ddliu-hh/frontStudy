@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      uname: 'pink',
+      age: 18,
+      hobby: ['乒乓球', '足球'],
+      family: {
+        baby: '小pink'
+      }
+    }
+    // 把对象转换为 JSON 字符串
+    // console.log(JSON.stringify(obj))
+    // 这种原理是：把对象转为Json类型，然后再转回来，那么就会重新开辟新的地址给它，不再指向原来的对象，不会影响到之前的
+    const o = JSON.parse(JSON.stringify(obj))
+    console.log(o)
+    o.family.baby = '123'
+    console.log(obj)
+  </script>
+</body>
+
+</html>

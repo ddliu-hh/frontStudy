@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 剩余参数允许我们将一个不定数量的参数表示为一个真数组，获取多余的实参,先写三个...  然后再随便取个名字表示参数 -->
+
+<body>
+  <script>
+    // 这样写表示至少有两个参数传进来，也允许更多，多的arr接收，所以叫剩余参数
+    function getSum(a, b, ...arr) {
+      console.log(arr)  // 使用的时候不需要写 ...
+    }
+    getSum(2, 3)
+    getSum(1, 2, 3, 4, 5)
+  </script>
+</body>
+
+</html>

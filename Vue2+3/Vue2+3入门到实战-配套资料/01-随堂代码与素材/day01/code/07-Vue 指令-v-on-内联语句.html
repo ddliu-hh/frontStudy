@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+  vue指令v-on
+1.作用:注册事件=添加监听+提供处理逻辑
+2.语法，有两种写法:
+v-on:事件名="内联语句"   。这种写法是直接在内联语句里写上处理的逻辑
+v-on:事件名= "methods中的函数名"       。这种是在Vue里的methods里写好一个函数，然后在这里写好函数名
+
+3.简写:可以简写  v-on:   ，它相当于  @  这个符号
+
+ -->
+
+
+<!-- 下面是内联写法 -->
+
+<body>
+  <div id="app">
+    <button @click="count--">-</button>
+    <span>{{ count }}</span>
+    <button v-on:click="count++">+</button>
+
+
+    <button @mouseover="count--">-</button>
+    <span>{{count}}</span>
+    <button v-on:mouseenter="count++">+</button>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 100
+      },
+      methods:{
+
+      }
+    })
+  </script>
+</body>
+
+</html>
